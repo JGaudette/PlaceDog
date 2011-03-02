@@ -1,6 +1,11 @@
 require 'sinatra'
 require 'RMagick'
 
+get "/" do
+
+  erb :index
+end
+
 get "/:width/:height" do
   content_type 'image/png'
 
