@@ -2,9 +2,6 @@ require 'sinatra'
 require 'RMagick'
 require 'newrelic_rpm'
 
-set :port, 3010
-set :bind, '127.0.0.1'
-
 get "/" do
 
   erb :index
