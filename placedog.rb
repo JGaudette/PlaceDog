@@ -7,7 +7,10 @@ get "/:width/:height" do
   width = params[:width].to_i
   height = params[:height].to_i
 
-  image = get_doggie_image( width, height )
+  image = nil
+  while( image == nil ) do
+    image = get_doggie_image( width, height )
+  end
 
   image.to_blob
 end
@@ -15,10 +18,14 @@ end
 
 def get_doggie_image( width, height )
   img = get_random_image
+
+  while( img.columns < width || img.rows < height ) do
+    puts 'going for another'
+    img = get_random_image
+  end
   multiplier = 0.0
 
   puts "req: #{width}x#{height}"
-
 
   if width == height
     if img.columns < img.rows
@@ -33,8 +40,8 @@ def get_doggie_image( width, height )
   end
 
   puts "multiplier is: #{multiplier}"
-  puts "orig: #{img.columns}x#{img.rows}"
 
+  puts "orig: #{img.columns}x#{img.rows}"
 
   img = img.thumbnail( img.columns*multiplier, img.rows*multiplier )
   puts "thumb: #{img.columns}x#{img.rows}"
@@ -42,7 +49,11 @@ def get_doggie_image( width, height )
 
   puts "after: #{img.columns}x#{img.rows}"
 
-  return img
+  if img.columns != 1 || img.rows != 1
+    return img
+  else
+    return nil
+  end
 end
 
 def get_random_image
