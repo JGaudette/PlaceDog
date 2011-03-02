@@ -20,6 +20,21 @@ get "/:width/:height" do
   image.to_blob
 end
 
+get "/g/:width/:height" do
+  content_type 'image/png'
+
+  width = params[:width].to_i
+  height = params[:height].to_i
+
+  image = nil
+  while( image == nil ) do
+    image = get_doggie_image( width, height )
+  end
+
+  image = image.quantize( 256, Magick::GRAYColorspace )
+
+  image.to_blob
+end
 
 def get_doggie_image( width, height )
   img = get_random_image
