@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'RMagick'
+require 'newrelic_rpm'
 
 get "/" do
 
