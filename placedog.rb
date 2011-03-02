@@ -2,23 +2,34 @@ require 'sinatra'
 require 'RMagick'
 
 get "/:width/:height" do
-  @image = File.open('public/dog01.jpg')
+  content_type 'image/png'
 
   width = params[:width].to_i
   height = params[:height].to_i
 
-  img = Magick::Image.read('public/dog01.jpg').first
-  puts "img is: #{img}"
+  image = get_doggie_image( width, height )
 
-  thumbnail = img.thumbnail( width, height )
-  thumbnail.format = 'png'
-
-  content_type 'image/png'
-  thumbnail.to_blob
+  image.to_blob
 end
 
 
-def get_uuid
-  `uuidgen`.strip
+def get_doggie_image( width, height )
+  img = Magick::Image.read('public/dog01.jpg').first
+
+
+  if width < height
+    multiplier = height.to_f / img.rows 
+
+    img = img.thumbnail( img.columns*multiplier, img.rows*multiplier )
+    img = img.crop( Magick::CenterGravity, width, height )
+
+  else
+    multiplier = width.to_f / img.columns 
+
+    img = img.thumbnail( img.columns*multiplier, img.rows*multiplier )
+    img = img.crop( Magick::CenterGravity, width, height )
+  end
+
+  return img
 end
 
