@@ -79,14 +79,13 @@ get "/:width/:height" do
   if not request_precheck( width, height )
     "Invalid width or height"
   else
-    content_type 'image/png'
-
-    image = nil
-    while( image == nil ) do
-      image = get_doggie_image( width, height )
+    image = get_doggie_image( width, height )
+    if image == nil
+      "Unknown error occured"
+    else
+      content_type 'image/png'
+      image.to_blob
     end
-
-    image.to_blob
   end
 end
 
@@ -97,17 +96,14 @@ get "/g/:width/:height" do
   if not request_precheck( width, height )
     "Invalid width or height"
   else
-    content_type 'image/png'
-
-
-    image = nil
-    while( image == nil ) do
-      image = get_doggie_image( width, height )
+    image = get_doggie_image( width, height )
+    if image == nil
+      "Unknown error occured"
+    else
+      content_type 'image/png'
+      image = image.quantize( 256, Magick::GRAYColorspace )
+      image.to_blob
     end
-
-    image = image.quantize( 256, Magick::GRAYColorspace )
-
-    image.to_blob
   end
 end
 
