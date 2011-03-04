@@ -4,6 +4,9 @@ require 'newrelic_rpm'
 
 Pic = Struct.new( :image, :width, :height )
 
+###
+# Preload all pictures in the /images directory
+###
 def preload_pics
   puts "Preloading pics"
   images = []
