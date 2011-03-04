@@ -71,8 +71,11 @@ MAX_WIDTH  = 4272
 MAX_HEIGHT = 2848
 
 get "/" do
-
   erb :index
+end
+
+get "/css/style_dark.css" do
+  sass :stylesheet
 end
 
 get "/:width/:height" do
