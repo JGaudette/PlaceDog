@@ -2,13 +2,13 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 
-gem 'memcache'
+#gem 'memcache'
 gem 'rmagick'
 gem 'newrelic_rpm'
 
-gem 'vlad'
-gem 'vlad-thin'
-gem 'vlad-git'
+#gem 'vlad'
+#gem 'vlad-thin'
+#gem 'vlad-git'
 
 group :development do
   gem 'shotgun'
@@ -20,7 +20,7 @@ group :test, :development do
   gem 'mynyml-redgreen', :require => 'redgreen'
 end
 
-group :production do
-  gem 'thin'
-end
+#group :production do
+  #gem 'thin'
+#end
 
