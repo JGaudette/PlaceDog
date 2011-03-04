@@ -82,3 +82,4 @@ def get_random_image
   
   Magick::Image.read( "images/#{all_pics[rand(all_pics.count)]}" ).first
 end
+
