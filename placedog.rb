@@ -64,6 +64,8 @@ end
 
 PICS = preload_pics
 puts "#{PICS} now has #{PICS.count}"
+MAX_WIDTH  = 4272
+MAX_HEIGHT = 2848
 
 get "/" do
 
@@ -71,33 +73,48 @@ get "/" do
 end
 
 get "/:width/:height" do
-  content_type 'image/png'
-
   width = params[:width].to_i
   height = params[:height].to_i
 
-  image = nil
-  while( image == nil ) do
-    image = get_doggie_image( width, height )
-  end
+  if not request_precheck( width, height )
+    "Invalid width or height"
+  else
+    content_type 'image/png'
 
-  image.to_blob
+    image = nil
+    while( image == nil ) do
+      image = get_doggie_image( width, height )
+    end
+
+    image.to_blob
+  end
 end
 
 get "/g/:width/:height" do
-  content_type 'image/png'
-
   width = params[:width].to_i
   height = params[:height].to_i
 
-  image = nil
-  while( image == nil ) do
-    image = get_doggie_image( width, height )
+  if not request_precheck( width, height )
+    "Invalid width or height"
+  else
+    content_type 'image/png'
+
+
+    image = nil
+    while( image == nil ) do
+      image = get_doggie_image( width, height )
+    end
+
+    image = image.quantize( 256, Magick::GRAYColorspace )
+
+    image.to_blob
   end
-
-  image = image.quantize( 256, Magick::GRAYColorspace )
-
-  image.to_blob
 end
 
+def request_precheck( width, height )
+  if width > MAX_WIDTH or height > MAX_HEIGHT
+    return false
+  end
 
+  return true
+end
