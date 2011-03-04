@@ -10,8 +10,8 @@
 @import "reset.css";
 
 body { background: url(/images/bg_dark.jpg) repeat #121212; color:#ababab; font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; }
-a { color: red; }
-a.visited { color: red; }
+a { color: red; text-decoration: none; }
+a.visited { color: red; text-decoration: none; }
 
 #wrapper { background: url(/images/background_dark.png) no-repeat; width: 820px; height: 520px; margin: 100px auto; overflow: hidden; }
 
@@ -21,11 +21,19 @@ a.visited { color: red; }
 
 #container #title h1 { font-size: 34px; font-weight: 100; color: #0070cc; }
 
-#container #right_side, #container #left_side { width: 290px; min-height: 180px; padding-top: 10px; margin-bottom: 20px; }
+#container #right_side, #container #left_side { width: 290px; min-height: 180px; padding-top: 0px; margin-bottom: 20px; }
 
 #container #left_side { float: left; }
 
-#container #left_side p { font-size: 16px; line-height: 36px; text-align: justify; font-weight: 200; }
+#container #left_side p { font-size: 16px; line-height: 26px; text-align: justify; font-weight: 200; }
+
+#container #left_side ul { list-style-type: circle; list-style-position: inside; margin-left: 20px; padding-top: 5px; }
+
+#container #left_side h2 { font-size: 20px; }
+
+#container #left_side li { margin-top: 5px; }
+
+#container #left_side p.comment { display: inline; font-color: white; font-style: italic; font-size: 13px; }
 
 #container #right_side { float: right; }
 
