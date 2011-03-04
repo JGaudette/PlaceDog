@@ -2,39 +2,20 @@ require 'sinatra'
 require 'RMagick'
 require 'newrelic_rpm'
 
-get "/" do
+Pic = Struct.new( :image, :width, :height )
 
-  erb :index
-end
+def preload_pics
+  puts "Preloading pics"
+  images = []
 
-get "/:width/:height" do
-  content_type 'image/png'
-
-  width = params[:width].to_i
-  height = params[:height].to_i
-
-  image = nil
-  while( image == nil ) do
-    image = get_doggie_image( width, height )
+  Dir.entries( 'images/' ).collect{ |f| f if f =~ /\.jpg/ }.compact.each do |pic|
+    mag = Magick::Image.read( "images/#{pic}" ).first
+    p = Pic.new( mag, mag.columns, mag.rows )
+    images.push p
   end
 
-  image.to_blob
-end
-
-get "/g/:width/:height" do
-  content_type 'image/png'
-
-  width = params[:width].to_i
-  height = params[:height].to_i
-
-  image = nil
-  while( image == nil ) do
-    image = get_doggie_image( width, height )
-  end
-
-  image = image.quantize( 256, Magick::GRAYColorspace )
-
-  image.to_blob
+  puts "Pics found: #{images.count}"
+  return images
 end
 
 def get_doggie_image( width, height )
@@ -78,8 +59,45 @@ def get_doggie_image( width, height )
 end
 
 def get_random_image
-  all_pics = Dir.entries( 'images/' ).collect{ |f| f if f =~ /\.jpg/ }.compact
-  
-  Magick::Image.read( "images/#{all_pics[rand(all_pics.count)]}" ).first
+  return PICS[rand(PICS.count)].image
 end
+
+PICS = preload_pics
+puts "#{PICS} now has #{PICS.count}"
+
+get "/" do
+
+  erb :index
+end
+
+get "/:width/:height" do
+  content_type 'image/png'
+
+  width = params[:width].to_i
+  height = params[:height].to_i
+
+  image = nil
+  while( image == nil ) do
+    image = get_doggie_image( width, height )
+  end
+
+  image.to_blob
+end
+
+get "/g/:width/:height" do
+  content_type 'image/png'
+
+  width = params[:width].to_i
+  height = params[:height].to_i
+
+  image = nil
+  while( image == nil ) do
+    image = get_doggie_image( width, height )
+  end
+
+  image = image.quantize( 256, Magick::GRAYColorspace )
+
+  image.to_blob
+end
+
 
