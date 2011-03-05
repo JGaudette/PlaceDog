@@ -36,19 +36,7 @@ class Placedog < Sinatra::Base
 
     puts "req: #{width}x#{height}"
 
-    if width == height
-      if img.columns < img.rows
-        multiplier = width.to_f / img.columns 
-      else
-        multiplier = height.to_f / img.rows
-      end
-    elsif width < height
-      multiplier = height.to_f / img.rows 
-    else
-      multiplier = width.to_f / img.columns 
-    end
-
-    puts "multiplier is: #{multiplier}"
+    multiplier = get_multiplier( img, width, height )
 
     puts "orig: #{img.columns}x#{img.rows}"
 
@@ -64,6 +52,31 @@ class Placedog < Sinatra::Base
       return nil
     end
   end
+
+  def get_multiplier( img, width, height )
+    #height_multiplier = height.to_f / img.rows
+    #width_multiplier = width.to_f / img.columns
+    height_multiplier = img.rows / height.to_f
+    width_multiplier = img.columns / width.to_f
+
+
+    if width == height
+      puts 'width == height'
+      multiplier = width_multiplier > height_multiplier ? width_multiplier : height_multiplier
+      # do something
+    elsif width > height
+      puts 'width > height'
+      multiplier = width_multiplier
+    else
+      puts 'width < height'
+      multiplier = height_multiplier
+    end
+
+
+    puts "multiplier is: #{multiplier}"
+    multiplier
+  end
+
 
   def get_random_image
     return PICS[rand(PICS.count)].image
