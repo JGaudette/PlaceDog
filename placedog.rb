@@ -54,24 +54,11 @@ class Placedog < Sinatra::Base
   end
 
   def get_multiplier( img, width, height )
-    #height_multiplier = height.to_f / img.rows
-    #width_multiplier = width.to_f / img.columns
-    height_multiplier = img.rows / height.to_f
-    width_multiplier = img.columns / width.to_f
+    height_multiplier = (height.to_f / img.rows).round( 6 )
+    width_multiplier =  (width.to_f / img.columns.to_f).round( 6 )
 
-
-    if width == height
-      puts 'width == height'
-      multiplier = width_multiplier > height_multiplier ? width_multiplier : height_multiplier
-      # do something
-    elsif width > height
-      puts 'width > height'
-      multiplier = width_multiplier
-    else
-      puts 'width < height'
-      multiplier = height_multiplier
-    end
-
+    multiplier = width_multiplier > height_multiplier ? width_multiplier : height_multiplier
+    multiplier = multiplier + 0.000002
 
     puts "multiplier is: #{multiplier}"
     multiplier
