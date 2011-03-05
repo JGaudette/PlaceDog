@@ -38,6 +38,7 @@ class PlacedogTest < Test::Unit::TestCase
 
   def test_get_many_pictures
     (1..20).each do |i|
+      puts "----- #{i} -----"
       width = rand 2000
       height = rand 2000
 
