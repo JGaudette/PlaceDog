@@ -1,3 +1,4 @@
 require './placedog.rb'
-run Sinatra::Application
+
+run Placedog
 
