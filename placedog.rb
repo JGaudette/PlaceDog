@@ -4,6 +4,7 @@ require 'newrelic_rpm'
 
 
 class Placedog < Sinatra::Base
+  set :public, 'public/'
   Pic = Struct.new( :image, :width, :height )
   
 
