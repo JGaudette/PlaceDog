@@ -6,7 +6,7 @@ require 'newrelic_rpm'
 class Placedog < Sinatra::Base
   set :public, 'public/'
   Pic = Struct.new( :image, :width, :height )
-  
+
 
   ###
   # Preload all pictures in the /images directory
@@ -87,7 +87,7 @@ class Placedog < Sinatra::Base
     height = params[:height].to_i
 
     if not request_precheck( width, height )
-    "Invalid width or height"
+      "Invalid width or height"
     else
       image = get_doggie_image( width, height )
       if image == nil
