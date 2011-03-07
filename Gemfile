@@ -4,7 +4,7 @@ gem 'sinatra'
 
 #gem 'memcache'
 gem 'rmagick'
-gem 'newrelic_rpm'
+#gem 'newrelic_rpm'
 gem 'haml'
 
 #gem 'vlad'
