@@ -1,7 +1,8 @@
 repo_name: JGaudette/PlaceDog
 report_id: 0fa0a01cef461536dcbbca0f0c29ab85
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T12:50:57+00:00'
+timestamp: '2024-01-04T14:53:47+00:00'
 requested_by: JGaudette
 provider: github
 branch: master
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/6727/css.png
+  detection_source_url: https://github.com/JGaudette/PlaceDog
   detection_source: Repo Metadata
 - name: HAML
   description: HTML Abstraction Markup Language - A Markup Haiku
@@ -26,7 +28,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/1169/Picture_2.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/JGaudette/PlaceDog/blob/master/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: Jon
   last_updated_on: 2011-03-01 19:47:29.000000000 Z
@@ -39,6 +41,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/989/ruby.png
+  detection_source_url: https://github.com/JGaudette/PlaceDog
   detection_source: Repo Metadata
 - name: Sinatra
   description: Classy web-development dressed in a DSL
@@ -49,6 +52,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Microframeworks (Backend)
   image_url: https://img.stackshare.io/service/999/logo.png
+  detection_source_url: https://github.com/JGaudette/PlaceDog/blob/master/Gemfile
   detection_source: Gemfile
   last_updated_by: Jon
   last_updated_on: 2011-03-01 19:47:29.000000000 Z
@@ -60,6 +64,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/JGaudette/PlaceDog
   detection_source: Repo Metadata
 - name: RSpec
   description: Behaviour Driven Development for Ruby
@@ -71,7 +76,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Testing Frameworks
   image_url: https://img.stackshare.io/service/2539/logo.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/JGaudette/PlaceDog/blob/master/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: Jon
   last_updated_on: 2011-03-01 19:47:29.000000000 Z
@@ -83,6 +88,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Package Managers
   image_url: https://img.stackshare.io/service/12795/5jL6-BA5_400x400.jpeg
+  detection_source_url: https://github.com/JGaudette/PlaceDog/blob/master/Gemfile
   detection_source: Gemfile
   last_updated_by: Jon
   last_updated_on: 2011-03-01 19:47:29.000000000 Z
@@ -96,7 +102,7 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/18925/default_e338e2555176782d684cb0520d8c7d817f6bbe4f.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/JGaudette/PlaceDog/blob/master/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: Jon
   last_updated_on: 2011-03-01 19:47:29.000000000 Z
@@ -117,7 +123,7 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/18830/default_ba8d7756589e5fc0164687950e3f091b32554546.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/JGaudette/PlaceDog/blob/master/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: Jon
   last_updated_on: 2011-03-01 19:47:29.000000000 Z
@@ -131,7 +137,7 @@ tools:
   category: Libraries
   sub_category: RubyGems Packages
   image_url: https://img.stackshare.io/package/19213/default_e8ac24f22f88ea3b04a85afe7ad222faed6d5605.png
-  detection_source_url: Gemfile.lock
+  detection_source_url: https://github.com/JGaudette/PlaceDog/blob/master/Gemfile.lock
   detection_source: Gemfile
   last_updated_by: Jon
   last_updated_on: 2011-03-01 19:50:36.000000000 Z
