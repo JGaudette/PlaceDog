@@ -3,9 +3,9 @@
 ## Tech Stack
 JGaudette/PlaceDog is built on the following main stack:
 
+- [HAML](http://haml.info/) – Languages
 - [Ruby](https://www.ruby-lang.org) – Languages
 - [Sinatra](http://www.sinatrarb.com/) – Microframeworks (Backend)
-- [HAML](http://haml.info/) – Languages
 - [RSpec](https://rspec.info/) – Testing Frameworks
 
 Full tech stack [here](/techstack.md)
@@ -16,9 +16,9 @@ Full tech stack [here](/techstack.md)
 ## Tech Stack
 JGaudette/PlaceDog is built on the following main stack:
 
+- <img width='25' height='25' src='https://img.stackshare.io/service/1169/Picture_2.png' alt='HAML'/> [HAML](http://haml.info/) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/989/ruby.png' alt='Ruby'/> [Ruby](https://www.ruby-lang.org) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/999/logo.png' alt='Sinatra'/> [Sinatra](http://www.sinatrarb.com/) – Microframeworks (Backend)
-- <img width='25' height='25' src='https://img.stackshare.io/service/1169/Picture_2.png' alt='HAML'/> [HAML](http://haml.info/) – Languages
 - <img width='25' height='25' src='https://img.stackshare.io/service/2539/logo.png' alt='RSpec'/> [RSpec](https://rspec.info/) – Testing Frameworks
 
 Full tech stack [here](/techstack.md)
@@ -30,7 +30,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [JGaudette/PlaceDog](https://github.com/JGaudette/PlaceDog)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|10<br/>Tools used|01/05/24 <br/>Report generated|
+|10<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
 </div>
 
